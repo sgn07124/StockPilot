@@ -1,0 +1,51 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:stockpilot_prod}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 10
+      idle-timeout: 300000
+      connection-timeout: 20000
+      pool-name: StockPilotHikariCP
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        default_batch_fetch_size: 100
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0.3
+
+kis:
+  api:
+    base-url: https://openapi.koreainvestment.com:9443
+    app-key: ${KIS_APP_KEY}
+    app-secret: ${KIS_APP_SECRET}
+    cano: ${KIS_CANO}
+    acnt-prdt-cd: ${KIS_ACNT_PRDT_CD}
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  access-token-expiration-seconds: 3600
+
+logging:
+  level:
+    root: INFO
+    com.stockpilot: INFO
+    org.hibernate: WARN
