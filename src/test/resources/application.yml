@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: stockpilot-test
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:stockpilot_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  ai:
+    openai:
+      api-key: mock-test-key
+      chat:
+        options:
+          model: gpt-4o-mini
+
+kis:
+  api:
+    base-url: https://openapivts.koreainvestment.com:29443
+    app-key: mock-test-app-key
+    app-secret: mock-test-app-secret
+    cano: "00000000"
+    acnt-prdt-cd: "01"
+
+jwt:
+  secret-key: stockpilot-test-secret-key-must-be-very-long-32bytes-minimum
+  access-token-expiration-seconds: 86400

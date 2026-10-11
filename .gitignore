@@ -40,7 +40,9 @@ out/
 .env
 .env.*
 !.env.example
+src/main/resources/application-local.yml
 
 ### Documentation / Planning ###
 docs/planning/
+
 
