@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0b0e14;
+    --bg-secondary: #121620;
+    --bg-tertiary: #1a202c;
+    --border-color: #232a3b;
+    --border-subtle: #1e2433;
+    
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* 국내 주식 시장 표준 색상: 상승 Red, 하락 Blue */
+    --stock-up: #ef4444;
+    --stock-up-bg: rgba(239, 68, 68, 0.12);
+    --stock-down: #3b82f6;
+    --stock-down-bg: rgba(59, 130, 246, 0.12);
+    
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-purple: #a855f7;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* 고밀도 금융 터미널 스크롤바 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f131a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #273142;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b485d;
+  }
+}
